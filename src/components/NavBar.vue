@@ -2,11 +2,17 @@
   <div>
     <loading-spinner :loading="loading"></loading-spinner>
     <div v-if="!loading">
-      <v-app>
-        <v-app-bar app color="#131313">
-          <v-img :src="require('@/assets/logo.png')" class="logo"></v-img>
+
+      <v-app class="app">
+        <v-app-bar app color="#131313" height="90">
+          <v-img :src="require('@/assets/logo.png')" style="height:75px" class="logo"></v-img>
           <v-spacer></v-spacer>
-          <v-toolbar-items class="hidden-sm-and-down">
+          <v-toolbar-items height="120px"  class="hidden-sm-and-down">
+
+     
+       
+         
+
             <v-btn v-for="(item, index) in items" :key="index" :to="item.route" text>
               {{ item.label }}
             </v-btn>
@@ -18,7 +24,7 @@
              style="cursor: pointer;"
              width="50"
              height="50" 
-          >
+          
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" app class="hidden-md-and-up drawer" mobile-breakpoint="960" temporary>
           <v-list>
@@ -29,6 +35,7 @@
         </v-navigation-drawer>
       </v-app>
     </div>
+    <NavSlider />
   </div>
 </template>
 
@@ -46,6 +53,7 @@ import VList from 'vuetify/lib/components/VList/VList';
 import VListItem from 'vuetify/lib/components/VList/VListItem';
 import VListItemTitle from 'vuetify/lib/components/VList/VListItemTitle';
 
+
 export default defineComponent({
   name: 'NavBar',
   components: {
@@ -60,6 +68,7 @@ export default defineComponent({
     VList,
     VListItem,
     VListItemTitle
+
   },
   data() {
     return {
@@ -113,5 +122,9 @@ export default defineComponent({
   .hidden-md-and-up {
     display: none;
   }
+}
+
+.app{
+  height: 50px;
 }
 </style>
