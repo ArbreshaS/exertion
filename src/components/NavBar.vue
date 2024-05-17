@@ -24,7 +24,7 @@
              style="cursor: pointer;"
              width="50"
              height="50" 
-          
+          >
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" app class="hidden-md-and-up drawer" mobile-breakpoint="960" temporary>
           <v-list>
@@ -98,6 +98,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.v-btn{
+  margin:0 10px;
+}
 .v-btn:hover {
   color: #C8B560;
 }
@@ -106,9 +109,11 @@ export default defineComponent({
 }
 .drawer {
   background-color: #131313;
+  
 }
 .drawer-item {
   color: #FFFFFF;
+ 
 }
 .drawer-item:hover {
   color: #C8B560;
