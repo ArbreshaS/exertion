@@ -62,7 +62,7 @@
         this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
       },
       carouselChange() {
-        // Reset transitioning after a short delay to allow the lines animation to finish
+       
         setTimeout(() => {
           this.transitioning = false;
         }, 200);
