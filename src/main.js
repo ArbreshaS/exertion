@@ -4,11 +4,6 @@ import router from './router'
 import store from './store'
 import VueParticles from 'vue-particles'
 
-// src/main.js
-import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router';
-import store from './store';
 
 // Vuetify
 import 'vuetify/styles';
@@ -19,9 +14,10 @@ import * as directives from 'vuetify/directives';
 // Font Awesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebook, faTwitter, faPinterest } from '@fortawesome/free-brands-svg-icons';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faFacebook, faTwitter, faPinterest);
+library.add(faFacebook, faTwitter, faPinterest, faPlay);
 
 const vuetify = createVuetify({
   components,
@@ -35,5 +31,5 @@ app.component('font-awesome-icon', FontAwesomeIcon);
 app.use(store);
 app.use(router);
 app.use(vuetify);
-
+app.use(VueParticles)
 app.mount('#app');

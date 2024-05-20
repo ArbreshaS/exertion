@@ -1,0 +1,63 @@
+<template>
+    <div v-if="isOpen" class="modal">
+      <div class="modal-content">
+        <span @click="closeModal" class="close">&times;</span>
+        <video controls width="100%">
+          <source :src="videoUrl" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    props: {
+      isOpen: Boolean,
+      videoUrl: String
+    },
+    methods: {
+      closeModal() {
+        this.$emit('close');
+      }
+    }
+  };
+  </script>
+  
+  <style scoped>
+  .modal {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Center modal vertically and horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  </style>
+  

@@ -1,8 +1,6 @@
 <template>
   <div class="aboutsection">
-    <v-container fluid class="px-12" style="max-width: 1500px;"> <!-- Added px-6 class for horizontal padding -->
-      <div class="content">
-        <div class="particle">
+    <div class="particle">
           <vue-particles
             color="#C8B560"
             :particleOpacity="0.9"
@@ -21,6 +19,10 @@
             clickMode="repulse"
           ></vue-particles>
         </div>
+   
+      <div class="content">
+    
+        <v-container fluid class="px-12" style="max-width: 1500px;"> 
         <v-row>
           <v-col cols="12" sm="6">
             <div class="column-content col1">
@@ -32,12 +34,13 @@
           </v-col>
           <v-col cols="12" sm="6">
             <div class="column-content">
-              <v-img :src="require('@/assets/aboutsection.png')" style="max-height: 550px; border-radius: 25%;" class="logo"></v-img>
+              <v-img :src="require('@/assets/aboutsection.png')" style="max-height: 600px; border-radius: 15%;" class="logo"></v-img>
             </div>
           </v-col>
         </v-row>
+      </v-container>
       </div>
-    </v-container>
+  
   </div>
 </template>
 <script>
@@ -52,10 +55,13 @@ export default {
 <style>
 .aboutsection {
   background-color: #131313;
+  position:relative;
+  
 }
 
 .content {
   position: relative;
+
 }
 
 .particle {
@@ -63,8 +69,10 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  
   z-index: 0;
+ 
+
 }
 
 .column-content {
@@ -80,6 +88,8 @@ export default {
 .column-content h3 {
   color: #C8B560;
   font-size: 36px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .column-content span {
@@ -90,28 +100,26 @@ export default {
   margin-bottom: 50px;
 }
 
-.column-content.col1 h3 {
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
+
 
 .column-content.col1 h2 {
-  margin-bottom: 30px; /* Reduced margin for smaller screens */
+  margin-bottom: 30px; 
   text-transform: uppercase;
 }
 
 .column-content.col1 p {
-  margin-bottom: 30px; /* Reduced margin for smaller screens */
+  margin-bottom: 30px; 
   font-size: 16px;
+}
+.particles-js-canvas-el{
+  height:1120px !important;
 }
 
 @media (max-width: 768px) {
-  .particle {
-    height: 50vh; /* Reduce height for smaller screens */
-  }
+ 
 
   .column-content h2 {
-    font-size: 24px; /* Decrease font size for smaller screens */
+    font-size: 24px; 
   }
 }
 </style>
