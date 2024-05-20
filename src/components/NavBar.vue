@@ -2,40 +2,38 @@
   <div>
     <loading-spinner :loading="loading"></loading-spinner>
     <div v-if="!loading">
-
       <v-app class="app">
         <v-app-bar app color="#131313" height="90">
-          <v-img :src="require('@/assets/logo.png')" style="height:75px" class="logo"></v-img>
+          <v-img v-if="!isResponsiveMode" :src="require('@/assets/logo.png')" style="height:70px" class="logo"></v-img>
           <v-spacer></v-spacer>
-          <v-toolbar-items height="120px"  class="hidden-sm-and-down">
-
-     
-       
-         
-
-            <v-btn v-for="(item, index) in items" :key="index" :to="item.route" text>
+          <v-toolbar-items height="120px" class="hidden-sm-and-down">
+            <v-btn v-for="(item, index) in items" :key="index" :to="item.route" text class="item-btn">
               {{ item.label }}
             </v-btn>
           </v-toolbar-items>
           <img
-             :src="require('@/assets/menu.jpg')"
-             @click="drawer = !drawer"
+             :src="drawer ? require('@/assets/closeicon.png') : require('@/assets/menu.jpg')"
+             @click="toggleDrawer"
              class="hidden-md-and-up"
              style="cursor: pointer;"
-             width="50"
-             height="50" 
+             width="auto"
+             height="70" 
           >
         </v-app-bar>
-        <v-navigation-drawer v-model="drawer" app class="hidden-md-and-up drawer" mobile-breakpoint="960" temporary>
+        <v-navigation-drawer location="right" v-model="drawer" app class="hidden-md-and-up drawer" mobile-breakpoint="960" temporary>
+          <div class="text-center">
+            <v-img :src="require('@/assets/logo.png')" style="height:75px; margin-left: 65px !important;"></v-img>
+          </div>
+          <div class="divider"></div>
           <v-list>
-            <v-list-item v-for="(item, index) in items" :key="index" @click="navigateTo(item.route)">
+            <v-list-item v-for="(item, index) in items" :key="index" @click="navigateTo(item.route)" class="drawer-list-item">
               <v-list-item-title class="drawer-item">{{ item.label }}</v-list-item-title>
+              <div class="divider"></div>
             </v-list-item>
           </v-list>
         </v-navigation-drawer>
       </v-app>
     </div>
-    <NavSlider />
   </div>
 </template>
 
@@ -45,14 +43,12 @@ import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import VApp from 'vuetify/lib/components/VApp';
 import VAppBar from 'vuetify/lib/components/VAppBar';
 import VImg from 'vuetify/lib/components/VImg';
-import VSpacer from 'vuetify/lib/components/VGrid/VSpacer';
 import VToolbarItems from 'vuetify/lib/components/VToolbar/VToolbarItems';
 import VBtn from 'vuetify/lib/components/VBtn';
 import VNavigationDrawer from 'vuetify/lib/components/VNavigationDrawer';
 import VList from 'vuetify/lib/components/VList/VList';
 import VListItem from 'vuetify/lib/components/VList/VListItem';
 import VListItemTitle from 'vuetify/lib/components/VList/VListItemTitle';
-
 
 export default defineComponent({
   name: 'NavBar',
@@ -61,14 +57,12 @@ export default defineComponent({
     VApp,
     VAppBar,
     VImg,
-    VSpacer,
     VToolbarItems,
     VBtn,
     VNavigationDrawer,
     VList,
     VListItem,
     VListItemTitle
-
   },
   data() {
     return {
@@ -80,26 +74,39 @@ export default defineComponent({
         { label: 'Projects', route: '/projects' },
         { label: 'News', route: '/news' },
         { label: 'Contact', route: '/contact' }
-      ]
+      ],
+      isResponsiveMode: false
     };
   },
   mounted() {
     setTimeout(() => {
       this.loading = false;
     }, 900);
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   },
   methods: {
+    toggleDrawer() {
+      this.drawer = !this.drawer;
+    },
     navigateTo(route) {
       this.$router.push(route);
-      this.drawer = false; 
+      this.drawer = false;
+    },
+    handleResize() {
+      this.isResponsiveMode = window.innerWidth <= 960;
     }
   }
 });
 </script>
 
 <style scoped>
-.v-btn{
-  margin:0 10px;
+.v-btn {
+  margin: 0 5px; 
+  min-width: 50px; 
 }
 .v-btn:hover {
   color: #C8B560;
@@ -109,11 +116,9 @@ export default defineComponent({
 }
 .drawer {
   background-color: #131313;
-  
 }
 .drawer-item {
   color: #FFFFFF;
- 
 }
 .drawer-item:hover {
   color: #C8B560;
@@ -128,8 +133,18 @@ export default defineComponent({
     display: none;
   }
 }
-
-.app{
+.app {
   height: 50px;
+}
+.divider {
+  border-bottom: 1px solid #C8B560;
+  margin: 20px 0;
+}
+.text-center {
+  text-align: center;
+}
+.drawer-list-item {
+  padding-left: 50px;
+  padding-right: 50px; 
 }
 </style>

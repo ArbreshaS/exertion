@@ -4,11 +4,6 @@ import router from './router'
 import store from './store'
 import VueParticles from 'vue-particles'
 
-// src/main.js
-import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router';
-import store from './store';
 
 // Vuetify
 import 'vuetify/styles';
@@ -35,5 +30,6 @@ app.component('font-awesome-icon', FontAwesomeIcon);
 app.use(store);
 app.use(router);
 app.use(vuetify);
+app.use(VueParticles);
 
 app.mount('#app');
