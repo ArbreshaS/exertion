@@ -3,7 +3,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="6">
-          <h1 class="contact-title">Contact</h1>
+          <h3 class="contact-title">Contact</h3>
         </v-col>
       </v-row>
       <v-row>
@@ -16,7 +16,7 @@
             referrerpolicy="no-referrer-when-downgrade"
             title="map"
           ></iframe>
-          <div class="info-box-overlay">
+          <div class="info-box-overlay" :class="{ 'responsive-scroll': isResponsive }">
             <div class="info-line">
               <h3 class="title">Melbourne, <span class="highlight">Australia</span></h3>
             </div>
@@ -39,8 +39,7 @@
               </p>
             </div>
             <div class="info-line" style="margin-bottom: 15px;">
-              <p class="paragraph work-hours"><span style="color: #fff; font-weight: bold;">Work Hours:</span> Monday - Friday: 08h00 - </p>
-              <p class="paragraph work-hours" style="margin-left: 120px;">17h30</p> 
+              <p class="paragraph work-hours"><span style="color: #fff; font-weight: bold;">Work Hours:</span> Monday - Friday: 08h00 - 17h30 </p>
             </div>
           </div>
         </v-col>
@@ -49,6 +48,27 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isResponsive: false
+    };
+  },
+  mounted() {
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
+  },
+  unmounted() {
+    window.removeEventListener("resize", this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      this.isResponsive = window.innerWidth < 600; 
+    }
+  }
+};
+</script>
 
 <style scoped>
 .contact-container {
@@ -57,7 +77,8 @@
 }
 
 .contact-title {
-  color: white; 
+  color: #C8B560;
+  font-size: 36px;
 }
 
 .info-box-overlay {
@@ -109,5 +130,26 @@
 .social-icon:hover {
   color: #C8B560 !important;
   cursor: pointer !important;
+}
+
+.responsive-scroll {
+  overflow-y: auto;
+}
+
+@media only screen and (max-width: 714px) {
+  .info-box-overlay {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 50%; 
+    height: auto;
+    max-width: 100%;
+  }
+  .info-box-overlay .paragraph {
+    max-width: 300px; 
+    margin: 1px auto; 
+  }
 }
 </style>
