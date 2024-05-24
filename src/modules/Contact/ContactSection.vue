@@ -16,7 +16,7 @@
             referrerpolicy="no-referrer-when-downgrade"
             title="map"
           ></iframe>
-          <div class="info-box-overlay" :class="{ 'responsive-scroll': isResponsive }">
+          <div class="info-box-overlay">
             <div class="info-line">
               <h3 class="title">Melbourne, <span class="highlight">Australia</span></h3>
             </div>
@@ -83,7 +83,7 @@ export default {
 
 .info-box-overlay {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 30%; 
   transform: translate(-50%, -50%);
   background-color: #131313;
@@ -93,6 +93,7 @@ export default {
   max-height: 1500px; 
   z-index: 1; 
   text-align: center; 
+  overflow-y: auto; 
 }
 
 .info-box-overlay h3.title {
@@ -132,10 +133,6 @@ export default {
   cursor: pointer !important;
 }
 
-.responsive-scroll {
-  overflow-y: auto;
-}
-
 @media only screen and (max-width: 714px) {
   .info-box-overlay {
     top: 50%;
@@ -143,13 +140,9 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
     width: auto;
-    max-height: 50%; 
+    max-height: 80vh; 
     height: auto;
-    max-width: 100%;
-  }
-  .info-box-overlay .paragraph {
-    max-width: 300px; 
-    margin: 1px auto; 
+    max-width: 90%; 
   }
 }
 </style>

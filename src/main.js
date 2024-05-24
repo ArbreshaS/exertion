@@ -34,3 +34,7 @@ app.use(vuetify);
 app.use(VueParticles);
 
 app.mount('#app');
+
+
+
+
