@@ -56,6 +56,7 @@ export default {
 .aboutsection {
   background-color: #131313;
   position:relative;
+  padding-top:100px ;
   
 }
 
