@@ -80,10 +80,10 @@ export default {
     return {
       imageUrls: [
         require('@/assets/outside.jpg'),
-        require('@/assets/a.jpg'),
+        require('@/assets/europe.jpg'),
         require('@/assets/feat.jpg'),
-        require('@/assets/b.jpg'),
-        require('@/assets/c.jpg')
+        require('@/assets/office.jpg'),
+        require('@/assets/relax.jpg')
       ]
     };
   },
