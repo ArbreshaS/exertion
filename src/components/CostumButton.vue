@@ -18,7 +18,6 @@
     },
     methods: {
       handleClick() {
-        // Emit a custom event if needed
         this.$emit('click');
       }
     }
@@ -26,7 +25,6 @@
   </script>
   
   <style scoped>
-  /* Add the provided CSS styles here */
   .button-91 {
     color: #fff;
     padding: 15px 25px;
