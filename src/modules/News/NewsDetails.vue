@@ -6,7 +6,7 @@
           <h3 class="news-title">News</h3>
         </v-col>
       </v-row>
-      <v-row v-for="(asset, index) in assets" :key="index" class="image-wrapper">
+      <v-row v-for="(asset, index) in paginatedAssets" :key="index" class="image-wrapper">
         <v-col cols="12" class="image-col">
           <div class="image-box">
             <img :src="require(`@/assets/${asset.src}`)" :alt="asset.alt" class="service-image">
@@ -15,21 +15,27 @@
                 <h4 class="info-date">{{ asset.date }}</h4>
                 <h3 class="info-title">{{ asset.title }}</h3>
                 <p class="info-paragraph">{{ asset.paragraph }}</p>
-                <CustomButton buttonText="Learn More" @click="handleLearnMoreClick" />
+                <CostumButton buttonText="Learn More" @click="handleLearnMoreClick" />
               </div>
             </div>
           </div>
         </v-col>
       </v-row>
+      
+      <PaginationComponent :currentPage="currentPage" :totalPages="totalPages" @page-change="paginate" />
     </v-container>
   </div>
 </template>
 
+
 <script>
-import CustomButton from '@/components/CostumButton.vue'; 
+import CostumButton from '@/components/CostumButton.vue';
+import PaginationComponent from '@/components/PaginationComponent.vue'; 
+
 export default {
   components: {
-    CustomButton
+    CostumButton,
+    PaginationComponent
   },
   data() {
     return {
@@ -76,11 +82,34 @@ export default {
           title: "Interior News",
           paragraph: "This is some information about the interior image."
         }
-      ]
+      ],
+      currentPage: 1,
+      assetsPerPage: 3 // Number of assets per page
     };
+  },
+  computed: {
+    totalAssets() {
+      return this.assets.length;
+    },
+    totalPages() {
+      return Math.ceil(this.totalAssets / this.assetsPerPage);
+    },
+    paginatedAssets() {
+      const startIndex = (this.currentPage - 1) * this.assetsPerPage;
+      return this.assets.slice(startIndex, startIndex + this.assetsPerPage);
+    }
+  },
+  methods: {
+    paginate(page) {
+      this.currentPage = page;
+    },
+    handleLearnMoreClick() {
+      // Handle learn more click event
+    }
   }
 };
 </script>
+
 
 <style scoped>
 .image-container {
@@ -175,4 +204,22 @@ export default {
 .learn-more:hover {
   text-decoration: underline;
 }
+
+@media screen and (max-width: 767px) {
+  .image-col {
+    width: 100%; 
+  }
+
+  .info-box {
+    width: 100%; 
+    right: 100%;
+    opacity: 0; 
+  }
+
+  .image-box:hover .info-box {
+    right: 0;
+    opacity: 1;
+  }
+}
 </style>
+
