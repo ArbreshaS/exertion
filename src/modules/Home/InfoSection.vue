@@ -9,20 +9,20 @@
               <v-img :src="require('@/assets/1.jpg')" alt="Image 1" class="stretch-image" />
             </v-col>
             <v-col cols="12" class="inner-col">
-              <v-img :src="require('@/assets/2.jpg')" alt="Image 2" class="stretch-image" />
+              <v-img :src="require('@/assets/b.jpg')" alt="Image 2" class="stretch-image" />
             </v-col>
           </v-row>
           </div>
           
         </v-col>
         <v-col cols="12" md="3" class="column">
-          <div class="im"> <v-img :src="require('@/assets/3.jpg')" alt="Image 3" class="stretch-image" /></div>
+          <div class="im"> <v-img :src="require('@/assets/c.jpg')" alt="Image 3" class="stretch-image" /></div>
          
         </v-col>
         <v-col cols="12" md="3" class="column" :row-span="2">
           <v-row class="inner-row">
             <v-col cols="12" class="inner-col">
-              <v-img :src="require('@/assets/4.jpg')" alt="Image 4" class="stretch-image" />
+              <v-img :src="require('@/assets/feat.jpg')" alt="Image 4" class="stretch-image" />
             </v-col>
             <v-col cols="12" class="inner-col">
               <v-img :src="require('@/assets/5.jpg')" alt="Image 5" class="stretch-image" />
