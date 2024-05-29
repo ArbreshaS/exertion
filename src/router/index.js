@@ -5,6 +5,7 @@ import ProjectPage from "../pages/ProjectsPage";
 import NewsPage from "../pages/NewsPage";
 import ContactPage from "../pages/ContactPage"
 import ErrorPage from "../pages/ErrorPage.vue";
+import ProjectInfo from '@/pages/ProjectInfo.vue';
 
 
 const routes = [
@@ -22,6 +23,11 @@ const routes = [
     path: '/projects',
     name: 'projects',
     component: ProjectPage
+  },
+  {
+    path: '/projectinfo',
+    name: 'projectinfo',
+    component: ProjectInfo
   },
   {
     path: '/news',

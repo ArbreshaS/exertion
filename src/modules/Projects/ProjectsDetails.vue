@@ -74,8 +74,11 @@ import CostumButton from '@/components/CostumButton.vue';
 
 export default {
   components: {
-    CostumButton
+    CostumButton,
+
+   
   },
+
   data() {
     return {
       imageUrls: [
@@ -89,9 +92,10 @@ export default {
   },
   methods: {
     handleLearnMoreClick() {
-      console.log('Learn more clicked!');
+      this.$router.push({ path: '/projectinfo' });
     }
   }
+
 };
 </script>
 
