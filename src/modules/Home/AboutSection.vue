@@ -49,6 +49,11 @@ export default {
   components: {
     CustomButton
   },
+  methods: {
+    handleLearnMoreClick() {
+      this.$router.push({ path: '/about' });
+    }
+  }
 }
 </script>
 

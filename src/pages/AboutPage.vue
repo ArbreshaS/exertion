@@ -1,36 +1,32 @@
 <template>
-<div>
-  <vue-particles
-    color="#7B1FA2"
-    :particleOpacity="0.9"
-    :particlesNumber="120"
-    shapeType="polygon"
-    :particleSize="6"
-    linesColor="#00ACD6"
-    :linesWidth="1"
-    :lineLinked="true"
-    :lineOpacity="0.4"
-    :linesDistance="100"
-    :moveSpeed="6"
-    :hoverEffect="true"
-    hoverMode="grab"
-    :clickEffect="true"
-    clickMode="repulse"
->
-</vue-particles>
-</div>
-  
+  <div class="about">
+    <NavBar/>
+ <AboutHero/>
+ <AboutSection/>
+ <AboutService/>
+  </div>
+ 
 </template>
 
 <script>
+import NavBar from "../components/NavBar.vue"
+import AboutHero from "../modules/About/AboutHero.vue"
+import AboutSection from "@/modules/About/AboutSection.vue";
+import AboutService from "@/modules/About/AboutService.vue"
 
 export default {
     components: {
-    
+    NavBar, 
+    AboutHero,
+    AboutSection,
+    AboutService
+ 
   }
 }
 </script>
 
-<style>
-
+<style scoped>
+.about{
+  background-color: #131313;
+}
 </style>

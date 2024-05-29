@@ -3,11 +3,11 @@
     <loading-spinner :loading="loading"></loading-spinner>
     <div v-if="!loading">
       <v-app class="app">
-  
-        <v-app-bar app color="#131313" height="90" class="navbar-padding">
+        <v-container fluid class="px-12" > 
+        <v-app-bar app color="#131313" height="90">
           <v-img v-if="!isResponsiveMode" :src="require('@/assets/logo.png')" style="height:70px" class="logo"></v-img>
           <v-spacer></v-spacer>
-          <v-toolbar-items height="120px" class="hidden-sm-and-down">
+          <v-toolbar-items height="120px" class="hidden-sm-and-down"  id="navbar-padding">
             <v-btn v-for="(item, index) in items" :key="index" :to="item.route" text class="item-btn">
               {{ item.label }}
             </v-btn>
@@ -35,6 +35,7 @@
             </v-list-item>
           </v-list>
         </v-navigation-drawer>
+        </v-container>
       </v-app>
     </div>
   </div>
@@ -127,7 +128,7 @@ export default defineComponent({
 .drawer-item:hover {
   color: #C8B560;
 }
-.navbar-padding {
+#navbar-padding {
   padding-right: 90px;
 }
 
