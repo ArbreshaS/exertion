@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="containerr">
       <div class="background-image">
         <div class="overlay"></div>
         <div class="overlay-text">
@@ -17,10 +17,11 @@
   </script>
   
   <style scoped>
-  .container {
+  .containerr {
     position: relative;
     text-align: center;
     color: white;
+    
   }
   
   .background-image {
@@ -33,6 +34,7 @@
     justify-content: center;
     align-items: flex-end; 
     position: relative;
+    width: 100vw;
   }
   
   .overlay {

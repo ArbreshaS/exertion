@@ -1,10 +1,12 @@
 <template>
-  <div class="about">
-    <NavBar/>
- <AboutHero/>
- <AboutSection/>
- <AboutService/>
-  </div>
+<div class="abouttemplate">
+  <NavBar/>
+      <AboutHero/>
+      <AboutSection/>
+      <AboutService/>
+</div>
+   
+   
  
 </template>
 
@@ -15,18 +17,17 @@ import AboutSection from "@/modules/About/AboutSection.vue";
 import AboutService from "@/modules/About/AboutService.vue"
 
 export default {
-    components: {
+  components: {
     NavBar, 
     AboutHero,
     AboutSection,
     AboutService
- 
   }
 }
 </script>
 
-<style scoped>
-.about{
+<style >
+.abouttemplate {
   background-color: #131313;
 }
 </style>

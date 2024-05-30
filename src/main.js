@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueParticles from 'vue-particles'
+import VueSlickCarousel from 'vue-slick-carousel';
+
 
 
 // Vuetify
@@ -36,6 +38,7 @@ app.use(store);
 app.use(router);
 app.use(vuetify);
 app.use(VueParticles);
+app.use(VueSlickCarousel); 
 
 app.mount('#app');
 

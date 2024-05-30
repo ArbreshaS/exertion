@@ -1,24 +1,22 @@
 <template>
   <div id="app">
-   
     <router-view />
   </div>
 </template>
 
 <script>
-
-// import router from "./router/index"; 
-
 export default {
   name: "App",
-  components: {
-  
-  }
 };
 </script>
 
 <style>
-.app {
-  font-family: 'Poppins', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+
+
+body {
+  font-family: 'Barlow', sans-serif !important;
+  background-color: #131313 !important; 
 }
 </style>

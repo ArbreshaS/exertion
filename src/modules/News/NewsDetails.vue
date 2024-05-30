@@ -84,7 +84,7 @@ export default {
         }
       ],
       currentPage: 1,
-      assetsPerPage: 3 // Number of assets per page
+      assetsPerPage: 3 
     };
   },
   computed: {
@@ -104,8 +104,9 @@ export default {
       this.currentPage = page;
     },
     handleLearnMoreClick() {
-      // Handle learn more click event
+      this.$router.push({ path: '/newsdetail' });
     }
+  
   }
 };
 </script>

@@ -56,6 +56,7 @@
   text-align: center;
   color: #fff;
   padding-top: 120px;
+  background-color: #131313;
 }
 
 .hero-section {

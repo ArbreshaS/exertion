@@ -4,6 +4,8 @@
   <AboutSection/>
   <ServicesSection/>
   <InfoSection/>
+  <TestimionalsSection/>
+  
 </template>
 
 <script>
@@ -13,6 +15,8 @@ import AboutSection from "@/modules/Home/AboutSection.vue";
 import ServicesSection from "@/modules/Home/ServicesSection.vue";
 import InfoSection from "@/modules/Home/InfoSection.vue";
 
+import TestimionalsSection from '../modules/Home/TestimionalsSection.vue';
+
 
 
 export default {
@@ -21,7 +25,9 @@ export default {
       HeroSection,
       AboutSection,
       ServicesSection,
-      InfoSection
+      InfoSection,
+    
+    TestimionalsSection
 
     },
 
