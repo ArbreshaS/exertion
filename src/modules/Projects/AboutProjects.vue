@@ -23,31 +23,52 @@
             </div>
           </div>
         </div>
-        <div v-if="index === 2" class="additional-box larger-box">
+        <div v-if="index === 2" class="additional-box larger-box shorter-box left-box">
           <div class="box-content">
             <div class="work-done-wrapper">
-              <div class="work-done">TOOLS USED:</div>
+              <div class="work-done-tools">TOOLS USED:</div>
               <span class="work-done-line"></span>
             </div>
             <div class="env-design-wrapper">
               <ul class="env-design">
-                <li class="env">Autodesk 3ds Max</li>
-                <li class="mode">Adobe Photoshop</li>
-                <li class="text">UV Layout</li>
-                <li class="set">Substance Painter</li>
-                <li class="mode">Substance Designer</li>
-                <li class="text">Bitmap2Material</li>
-                <li class="set">Unreal Engine 1</li>
+                <li class="auto">Autodesk 3ds Max</li>
+                <li class="adobe">Adobe Photoshop</li>
+                <li class="uv">UV Layout</li>
+                <li class="sub">Substance Painter</li>
+                <li class="des">Substance Designer</li>
+                <li class="bit">Bitmap2Material</li>
+                <li class="un">Unreal Engine 1</li>
               </ul>
             </div>
           </div>
         </div>
+     
+                
+      
       </div>
     </div>
+    <div class="content">
+				
+				<div class="grid">
+					<figure class="effect-julia">
+						<img :src="juliaPhoto"/>
+						<figcaption>
+							<h2>Passionate <span>Julia</span></h2>
+							<div>
+								<p>Julia dances in the deep dark</p>
+								<p>She loves the smell of the ocean</p>
+								<p>And dives into the morning light</p>
+							</div>
+							
+						</figcaption>			
+					</figure>
+  </div>
+</div>
   </div>
 </template>
 
 <script>
+import juliaPhoto from '@/assets/pro.jpg';
 export default {
   data() {
     return {
@@ -55,8 +76,9 @@ export default {
         { id: 1, src: require('@/assets/design.jpg') },
         { id: 2, src: require('@/assets/magic.jpg') },
         { id: 3, src: require('@/assets/in.jpg') },
-        { id: 4, src: require('@/assets/pro.jpg') }
-      ]
+        
+      ],
+      juliaPhoto: juliaPhoto
     };
   }
 };
@@ -112,8 +134,16 @@ export default {
 }
 
 .larger-box {
-  height: 400px; /* Increased height */
-  width: 400px;  /* Increased width */
+  width: 400px;  
+}
+
+.shorter-box {
+  height: 350px; 
+}
+
+.left-box {
+  right: auto;
+  left: 20px;
 }
 
 .box-content {
@@ -129,6 +159,12 @@ export default {
 .work-done {
   font-weight: bold;
   margin-left: 63px; 
+  z-index: 1;
+}
+
+.work-done-tools{
+  font-weight: bold;
+  margin-left: 75px; 
   z-index: 1;
 }
 
@@ -173,9 +209,173 @@ export default {
   padding-left: 12px;
 }
 
+.env-design li.auto {
+  padding-left: 63px;
+}
+
+.env-design li.adobe {
+  padding-left: 57px;
+}
+
+.env-design li.uv {
+  padding-left: 5px;
+}
+
+.env-design li.sub {
+  padding-left: 61px;
+}
+
+.env-design li.des {
+  padding-left: 74px;
+}
+
+.env-design li.bit {
+  padding-left: 46px;
+}
+
+.env-design li.un {
+  padding-left: 46px;
+}
+
 .env-design li::before {
   content: "•";
   margin-right: 5px;
   color: black;
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { display: table; content: ''; }
+.clearfix:after { clear: both; }
+
+.grid figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 10px 1%;
+	min-width: 320px;
+	max-width: 480px;
+	max-height: 360px;
+	width: 48%;
+	height: auto;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 0.8;
+    height: 360px; 
+    width: 100%; 
+}
+
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+
+figure.effect-julia {
+	background: #2f3238;
+}
+
+figure.effect-julia img {
+	max-width: none;
+	height: 400px;
+	-webkit-transition: opacity 1s, -webkit-transform 1s;
+	transition: opacity 1s, transform 1s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+figure.effect-julia figcaption {
+	text-align: left;
+}
+
+figure.effect-julia h2 {
+	position: relative;
+	padding: 0.5em 0;
+}
+
+figure.effect-julia p {
+	display: inline-block;
+	margin: 0 0 0.25em;
+	padding: 0.4em 1em;
+	background: rgba(255,255,255,0.9);
+	color: #2f3238;
+	text-transform: none;
+	font-weight: 500;
+	font-size: 75%;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-360px,0,0);
+	transform: translate3d(-360px,0,0);
+}
+
+figure.effect-julia p:first-child {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+figure.effect-julia p:nth-of-type(2) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+figure.effect-julia p:nth-of-type(3) {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+figure.effect-julia:hover img {
+	opacity: 0.4;
+	-webkit-transform: scale3d(1.1,1.1,1);
+	transform: scale3d(1.1,1.1,1);
+}
+
+figure.effect-julia:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.hidden-image {
+  display: none;
 }
 </style>
