@@ -3,11 +3,11 @@
     <loading-spinner :loading="loading"></loading-spinner>
     <div v-if="!loading">
       <v-app class="app">
-        <v-container fluid class="px-12" > 
-        <v-app-bar app color="#131313" height="90">
+ 
+        <v-app-bar app color="#131313" height="90" class="navbar-padding">
           <v-img v-if="!isResponsiveMode" :src="require('@/assets/logo.png')" style="height:70px" class="logo"></v-img>
           <v-spacer></v-spacer>
-          <v-toolbar-items height="120px" class="hidden-sm-and-down"  id="navbar-padding">
+          <v-toolbar-items height="120px" class="hidden-sm-and-down">
             <v-btn v-for="(item, index) in items" :key="index" :to="item.route" text class="item-btn">
               {{ item.label }}
             </v-btn>
@@ -18,11 +18,11 @@
              class="hidden-md-and-up"
              style="cursor: pointer;"
              width="auto"
-             height="70" 
+             height="70"
           >
         </v-app-bar>
        
-
+ 
         <v-navigation-drawer location="right" v-model="drawer" app class="hidden-md-and-up drawer" mobile-breakpoint="960" temporary>
           <div class="text-center">
             <v-img :src="require('@/assets/logo.png')" style="height:75px; margin-left: 65px !important;"></v-img>
@@ -35,12 +35,11 @@
             </v-list-item>
           </v-list>
         </v-navigation-drawer>
-        </v-container>
       </v-app>
     </div>
   </div>
 </template>
-
+ 
 <script>
 import { defineComponent } from 'vue';
 import LoadingSpinner from '@/components/LoadingSpinner.vue';
@@ -53,7 +52,7 @@ import VNavigationDrawer from 'vuetify/lib/components/VNavigationDrawer';
 import VList from 'vuetify/lib/components/VList/VList';
 import VListItem from 'vuetify/lib/components/VList/VListItem';
 import VListItemTitle from 'vuetify/lib/components/VList/VListItemTitle';
-
+ 
 export default defineComponent({
   name: 'NavBar',
   components: {
@@ -106,11 +105,11 @@ export default defineComponent({
   }
 });
 </script>
-
+ 
 <style scoped>
 .v-btn {
-  margin: 0 5px; 
-  min-width: 50px; 
+  margin: 0 5px;
+  min-width: 50px;
 }
 .v-btn:hover {
   color: #C8B560;
@@ -128,10 +127,10 @@ export default defineComponent({
 .drawer-item:hover {
   color: #C8B560;
 }
-#navbar-padding {
+.navbar-padding {
   padding-right: 90px;
 }
-
+ 
 @media (max-width: 960px) {
   .hidden-sm-and-down {
     display: none;
@@ -155,6 +154,6 @@ export default defineComponent({
 }
 .drawer-list-item {
   padding-left: 50px;
-  padding-right: 50px; 
+  padding-right: 50px;
 }
 </style>

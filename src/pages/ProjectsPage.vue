@@ -9,7 +9,7 @@ import ProjectsDetails from "@/modules/Projects/ProjectsDetails.vue";
 export default {
     components: {
     NavBar, 
-    ProjectsDetails
+    ProjectsDetails,
   }
 }
 </script>
