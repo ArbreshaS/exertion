@@ -2,7 +2,8 @@
   <div class="company-container">
     <div class="image-list">
       <div v-for="(image, index) in images" :key="index" class="image-container">
-        <img :src="image.src" :alt="'Image ' + (index + 1)" class="company-image">
+        <img :src="image.src" :alt="'Image ' + (index + 1)" class="company-image hidden-image">
+        <div :class="['background-image', { 'fixed-background': index === 0 }]" :style="{ backgroundImage: `url(${image.src})` }"></div>
         <div v-if="index === 0" class="overlay-text">
           <div class="centered-text">INTERIOR</div>
           <div class="centered-text bigger-text">European Lard Station</div>
@@ -42,28 +43,23 @@
             </div>
           </div>
         </div>
-     
-                
-      
       </div>
     </div>
     <div class="content">
-				
-				<div class="grid">
-					<figure class="effect-julia">
-						<img :src="juliaPhoto"/>
-						<figcaption>
-							<h2>Passionate <span>Julia</span></h2>
-							<div>
-								<p>Julia dances in the deep dark</p>
-								<p>She loves the smell of the ocean</p>
-								<p>And dives into the morning light</p>
-							</div>
-							
-						</figcaption>			
-					</figure>
-  </div>
-</div>
+      <div class="grid">
+        <figure class="effect-julia">
+          <img :src="juliaPhoto" class="full-width-image"/>
+          <figcaption>
+            <h2> Identify your <span>Market!</span></h2>
+            <div>
+              <p>Dedication is powerful combination.</p>
+              <p>Attraction needs attention</p>
+              <p>Think about your interior!</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -76,7 +72,6 @@ export default {
         { id: 1, src: require('@/assets/design.jpg') },
         { id: 2, src: require('@/assets/magic.jpg') },
         { id: 3, src: require('@/assets/in.jpg') },
-        
       ],
       juliaPhoto: juliaPhoto
     };
@@ -95,14 +90,25 @@ export default {
 
 .image-container {
   position: relative;
+  height: 950px; 
 }
 
-.company-image {
-  display: block;
+.hidden-image {
+  display: none;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: -20px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.fixed-background {
+  background-attachment: fixed;
 }
 
 .overlay-text {
@@ -134,11 +140,11 @@ export default {
 }
 
 .larger-box {
-  width: 400px;  
+  width: 400px;
 }
 
 .shorter-box {
-  height: 350px; 
+  height: 350px;
 }
 
 .left-box {
@@ -158,13 +164,13 @@ export default {
 
 .work-done {
   font-weight: bold;
-  margin-left: 63px; 
+  margin-left: 63px;
   z-index: 1;
 }
 
-.work-done-tools{
+.work-done-tools {
   font-weight: bold;
-  margin-left: 75px; 
+  margin-left: 75px;
   z-index: 1;
 }
 
@@ -172,7 +178,7 @@ export default {
   position: absolute;
   left: -80px;
   width: 100px;
-  height: 1px; 
+  height: 1px;
   background-color: black;
 }
 
@@ -243,139 +249,144 @@ export default {
   color: black;
 }
 
-*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
-.clearfix:before, .clearfix:after { display: table; content: ''; }
-.clearfix:after { clear: both; }
+*, *:after, *:before { 
+  box-sizing: border-box; 
+}
+
+.clearfix:before, .clearfix:after { 
+  display: table; 
+  content: ''; 
+}
+
+.clearfix:after { 
+  clear: both; 
+}
 
 .grid figure {
-	position: relative;
-	float: left;
-	overflow: hidden;
-	margin: 10px 1%;
-	min-width: 320px;
-	max-width: 480px;
-	max-height: 360px;
-	width: 48%;
-	height: auto;
-	background: #3085a3;
-	text-align: center;
-	cursor: pointer;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 320px;
+  max-width: 480px;
+  max-height: 360px;
+  width: 48%;
+  height: auto;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
 }
 
 .grid figure img {
-    position: relative;
-    display: block;
-    min-height: 100%;
-    max-width: 100%;
-    opacity: 0.8;
-    height: 360px; 
-    width: 100%; 
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  opacity: 0.8;
+  height: 360px;
+  width: 100%;
 }
 
-
 .grid figure figcaption {
-	padding: 2em;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 1.25em;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
+  padding: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  backface-visibility: hidden;
 }
 
 .grid figure figcaption::before,
 .grid figure figcaption::after {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 .grid figure figcaption,
 .grid figure figcaption > a {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .grid figure h2 span {
-	font-weight: 800;
+  font-weight: 800;
 }
 
 .grid figure h2,
 .grid figure p {
-	margin: 0;
+  margin: 0;
 }
 
 .grid figure p {
-	letter-spacing: 1px;
-	font-size: 68.5%;
+  letter-spacing: 1px;
+  font-size: 68.5%;
 }
 
-
 figure.effect-julia {
-	background: #2f3238;
+  background: #2f3238;
 }
 
 figure.effect-julia img {
-	max-width: none;
-	height: 400px;
-	-webkit-transition: opacity 1s, -webkit-transform 1s;
-	transition: opacity 1s, transform 1s;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
+  max-width: none;
+  height: 400px;
+  transition: opacity 1s, transform 1s;
+  backface-visibility: hidden;
 }
 
 figure.effect-julia figcaption {
-	text-align: left;
+  text-align: left;
 }
 
 figure.effect-julia h2 {
-	position: relative;
-	padding: 0.5em 0;
+  position: relative;
+  padding: 0.5em 0;
 }
 
 figure.effect-julia p {
-	display: inline-block;
-	margin: 0 0 0.25em;
-	padding: 0.4em 1em;
-	background: rgba(255,255,255,0.9);
-	color: #2f3238;
-	text-transform: none;
-	font-weight: 500;
-	font-size: 75%;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(-360px,0,0);
-	transform: translate3d(-360px,0,0);
+  display: inline-block;
+  margin: 0 0 0.25em;
+  padding: 0.4em 1em;
+  background: rgba(255,255,255,0.9);
+  color: #2f3238;
+  text-transform: none;
+  font-weight: 500;
+  font-size: 75%;
+  transition: opacity 0.35s, transform 0.35s;
+  transform: translate3d(-360px,0,0);
 }
 
 figure.effect-julia p:first-child {
-	-webkit-transition-delay: 0.15s;
-	transition-delay: 0.15s;
+  transition-delay: 0.15s;
 }
 
 figure.effect-julia p:nth-of-type(2) {
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 
 figure.effect-julia p:nth-of-type(3) {
-	-webkit-transition-delay: 0.05s;
-	transition-delay: 0.05s;
+  transition-delay: 0.05s;
 }
 
 figure.effect-julia:hover img {
-	opacity: 0.4;
-	-webkit-transform: scale3d(1.1,1.1,1);
-	transform: scale3d(1.1,1.1,1);
+  opacity: 0.4;
+  transform: scale3d(1.1,1.1,1);
 }
 
 figure.effect-julia:hover p {
-	opacity: 1;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
+  opacity: 1;
+  transform: translate3d(0,0,0);
 }
 
-.hidden-image {
-  display: none;
+.grid {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../assets/ll.png.jpg");
+  background-size: cover;
+  background-position: center;
 }
 </style>

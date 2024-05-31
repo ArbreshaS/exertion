@@ -36,8 +36,8 @@
   
   <script>
   import slider1 from "@/assets/slider1.png";
-  import slider2 from "@/assets/slider2.png";
-  import slider3 from "@/assets/slider3.png";
+  import slider2 from "@/assets/slider3.png";
+  import slider3 from "@/assets/aaaaaaaa.png";
   
   export default {
    
@@ -79,11 +79,20 @@
   }
   
   .carousel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomOut 3s ease-in-out;
+}
+@keyframes zoomOut {
+  from {
+    transform: scale(1.2);
   }
-  
+  to {
+    transform: scale(1);
+  }
+}
+
   .carousel-text {
     position: absolute;
     top: 60%;

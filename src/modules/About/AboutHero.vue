@@ -35,7 +35,16 @@
     align-items: flex-end; 
     position: relative;
     width: 100vw;
+    animation: zoomOut 3s ease-in-out infinite; 
   }
+  @keyframes zoomOut {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
   
   .overlay {
     position: absolute;

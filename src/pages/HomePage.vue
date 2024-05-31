@@ -4,7 +4,9 @@
   <AboutSection/>
   <ServicesSection/>
   <InfoSection/>
+  <TeamSection/>
   <TestimionalsSection/>
+  <FooterSection/>
   
 </template>
 
@@ -14,8 +16,9 @@ import HeroSection from '@/modules/Home/HeroSection.vue';
 import AboutSection from "@/modules/Home/AboutSection.vue";
 import ServicesSection from "@/modules/Home/ServicesSection.vue";
 import InfoSection from "@/modules/Home/InfoSection.vue";
-
+import TeamSection from "../modules/Home/TeamSection.vue"
 import TestimionalsSection from '../modules/Home/TestimionalsSection.vue';
+import FooterSection from '@/components/FooterSection.vue';
 
 
 
@@ -26,8 +29,10 @@ export default {
       AboutSection,
       ServicesSection,
       InfoSection,
+      TeamSection,
     
-    TestimionalsSection
+    TestimionalsSection,
+    FooterSection
 
     },
 
