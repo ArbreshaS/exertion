@@ -1,11 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import VueParticles from 'vue-particles'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import VueParticles from 'vue-particles';
 import VueSlickCarousel from 'vue-slick-carousel';
-
-
+import CanvasJSChart from '@canvasjs/vue-charts'; // Import CanvasJSChart
 
 // Vuetify
 import 'vuetify/styles';
@@ -20,10 +19,9 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 import { faBarsProgress } from '@fortawesome/free-solid-svg-icons';
 import { faMoneyCheckDollar } from '@fortawesome/free-solid-svg-icons';
-
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faFacebook, faTwitter, faPinterest, faPlay,faPenNib,faBarsProgress,faMoneyCheckDollar);
+library.add(faFacebook, faTwitter, faPinterest, faPlay, faPenNib, faBarsProgress, faMoneyCheckDollar);
 
 const vuetify = createVuetify({
   components,
@@ -38,10 +36,7 @@ app.use(store);
 app.use(router);
 app.use(vuetify);
 app.use(VueParticles);
-app.use(VueSlickCarousel); 
+app.use(VueSlickCarousel);
+app.use(CanvasJSChart); // Initialize CanvasJSChart
 
 app.mount('#app');
-
-
-
-
