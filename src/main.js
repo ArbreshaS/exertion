@@ -7,6 +7,7 @@ import VueSlickCarousel from 'vue-slick-carousel';
 import CanvasJSChart from '@canvasjs/vue-charts'; // Import CanvasJSChart
 
 // Vuetify
+import Vuetify from 'vuetify';
 import 'vuetify/styles';
 import { createVuetify } from 'vuetify';
 import * as components from 'vuetify/components';
@@ -37,6 +38,7 @@ app.use(router);
 app.use(vuetify);
 app.use(VueParticles);
 app.use(VueSlickCarousel);
+app.use(Vuetify);
 app.use(CanvasJSChart); // Initialize CanvasJSChart
 
 app.mount('#app');

@@ -7,6 +7,7 @@ import ContactPage from "../pages/ContactPage"
 import ErrorPage from "../pages/ErrorPage.vue";
 import ProjectInfo from '@/pages/ProjectInfo.vue';
 import NewsInfo from "../pages/NewsInfo";
+import StockPage from "../pages/StocksPage.vue"
 
 
 const routes = [
@@ -45,6 +46,12 @@ const routes = [
     name: 'contact',
     component: ContactPage
   },
+  {
+    path: '/stock',
+    name: 'stock',
+    component: StockPage
+  },
+ 
   {
     path: "/:catchAll(.*)",
     name: 'error',

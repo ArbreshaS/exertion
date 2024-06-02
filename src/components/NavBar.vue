@@ -76,7 +76,8 @@ export default defineComponent({
         { label: 'About', route: '/about' },
         { label: 'Projects', route: '/projects' },
         { label: 'News', route: '/news' },
-        { label: 'Contact', route: '/contact' }
+        { label: 'Contact', route: '/contact' },
+        { label: 'Stock', route: '/stock' }
       ],
       isResponsiveMode: false
     };

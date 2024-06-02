@@ -36,7 +36,7 @@
   
   <script>
   import slider1 from "@/assets/slider1.png";
-  import slider2 from "@/assets/slider3.png";
+  import slider2 from "@/assets/img-slide-2.jpg";
   import slider3 from "@/assets/aaaaaaaa.png";
   
   export default {

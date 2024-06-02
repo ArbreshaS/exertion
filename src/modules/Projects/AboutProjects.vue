@@ -3,7 +3,7 @@
     <div class="image-list">
       <div v-for="(image, index) in images" :key="index" class="image-container">
         <img :src="image.src" :alt="'Image ' + (index + 1)" class="company-image hidden-image">
-        <div :class="['background-image', { 'fixed-background': index === 0 }]" :style="{ backgroundImage: `url(${image.src})` }"></div>
+        <div class="background-image fixed-background" :style="{ backgroundImage: `url(${image.src})` }"></div>
         <div v-if="index === 0" class="overlay-text">
           <div class="centered-text">INTERIOR</div>
           <div class="centered-text bigger-text">European Lard Station</div>
@@ -78,7 +78,6 @@ export default {
   }
 };
 </script>
-
 <style scoped>
 .company-container {
   text-align: center;
