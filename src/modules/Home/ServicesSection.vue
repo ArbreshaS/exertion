@@ -1,7 +1,7 @@
 <template>
     <div class="services">
       <v-container fluid class="px-12" style="max-width: 1500px;">
-        <v-row>
+        <v-row class="lamprelative">
           <v-col cols="12" md="6" lg="6">
             <div class="grid-item">
               <v-img class="service-image" :src="require('@/assets/services.png')" alt="Services Image"></v-img>
@@ -24,7 +24,11 @@
               </v-expansion-panels>
             </div>
           </v-col>
+         
         </v-row>
+        <div class="lamp">
+            <img src="../../assets//lampb.jpg">
+          </div>
       </v-container>
     </div>
   </template>
@@ -113,6 +117,16 @@
   font-size: 56px; 
   color: #fff; 
  
+}
+.lamprelative{
+  position:relative ;
+  width: 100%; 
+  height: auto; 
+}
+.lamp{
+  position:absolute;
+  top:1890px;
+  right:20px;
 }
   </style>
   
