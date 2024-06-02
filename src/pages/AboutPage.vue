@@ -4,6 +4,7 @@
       <AboutHero/>
       <AboutSection/>
       <AboutService/>
+      <FooterSection/>
 </div>
    
    
@@ -15,13 +16,15 @@ import NavBar from "../components/NavBar.vue"
 import AboutHero from "../modules/About/AboutHero.vue"
 import AboutSection from "@/modules/About/AboutSection.vue";
 import AboutService from "@/modules/About/AboutService.vue"
+import FooterSection from '@/components/FooterSection.vue';
 
 export default {
   components: {
     NavBar, 
     AboutHero,
     AboutSection,
-    AboutService
+    AboutService,
+    FooterSection
   }
 }
 </script>

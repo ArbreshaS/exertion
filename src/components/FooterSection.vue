@@ -73,9 +73,6 @@ export default {
 
 <style scoped>
 
-
-
-
 footer {
   color: #fff;
   background-image: url('@/assets/background.jpg');
@@ -85,7 +82,7 @@ footer {
   position: relative;
   width: 100%;
   height: 100%;
-  top: 350px;
+  top: 150px;
   border-top-left-radius: 70px;
   font-size: 1rem;
 }

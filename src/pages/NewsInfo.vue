@@ -4,6 +4,7 @@
     <NewsPageDetail/>
     <NewsInfo/>
     <WorkNewsDetails/>
+    <FooterSection/>
     </div>
   
 </template>
@@ -13,12 +14,14 @@
   import NewsPageDetail from "../modules/News/NewsPagaDetail.vue";
   import NewsInfo from "../modules/News/NewsInfo.vue"
   import WorkNewsDetails from "@/modules/News/WorkNewsDetails.vue";
+  import FooterSection from '@/components/FooterSection.vue';
   export default {
       components: {
       NavBar, 
       NewsPageDetail,
       NewsInfo,
-      WorkNewsDetails
+      WorkNewsDetails,
+      FooterSection
     }
   }
   </script>
