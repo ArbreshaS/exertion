@@ -3,7 +3,7 @@
         <NavBar/>
     <NewsPageDetail/>
     <NewsInfo/>
-    <ChartsInfo/>
+    <WorkNewsDetails/>
     </div>
   
 </template>
@@ -12,13 +12,13 @@
   import NavBar from "../components/NavBar.vue"
   import NewsPageDetail from "../modules/News/NewsPagaDetail.vue";
   import NewsInfo from "../modules/News/NewsInfo.vue"
-  import ChartsInfo from "@/modules/News/ChartsInfo.vue";
+  import WorkNewsDetails from "@/modules/News/WorkNewsDetails.vue";
   export default {
       components: {
       NavBar, 
       NewsPageDetail,
       NewsInfo,
-      ChartsInfo
+      WorkNewsDetails
     }
   }
   </script>
