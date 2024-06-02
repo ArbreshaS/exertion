@@ -29,10 +29,13 @@
           <input type="email" id="email" name="email" placeholder="Enter here" required>
           <label for="phone">Phone:</label>
           <input type="tel" id="phone" name="phone" placeholder="Enter here" required>
-          <CustomButton buttonText="MAKE OFFER" @click="handleLearnMoreClick" />
+          <CustomButton class="mt-12" buttonText="MAKE OFFER" @click="handleLearnMoreClick" />
         </div>
       </div>
     </div>
+    <div class="lamp">
+            <img src="../../assets//lampb.jpg">
+          </div>
     </v-container>
   </template>
   
@@ -52,7 +55,7 @@
   };
   </script>
   
-  <style>
+  <style scoped>
   .containers {
     display: flex;
     justify-content: flex-start; 
@@ -60,6 +63,14 @@
     height: 100vh;
     margin-left: 300px; 
     margin-top: 70px;
+   
+  }
+  .additional-details{
+    position:relative;
+  }
+  .lamp{
+    position:absolute;
+    top:2000px;
   }
   
   .boxes {
