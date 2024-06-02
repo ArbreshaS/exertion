@@ -4,7 +4,11 @@ import router from './router';
 import store from './store';
 import VueParticles from 'vue-particles';
 import VueSlickCarousel from 'vue-slick-carousel';
+
 import CanvasJSChart from '@canvasjs/vue-charts'; // Import CanvasJSChart
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
 
 // Vuetify
 import Vuetify from 'vuetify';
@@ -39,6 +43,7 @@ app.use(vuetify);
 app.use(VueParticles);
 app.use(VueSlickCarousel);
 app.use(Vuetify);
+
 app.use(CanvasJSChart); // Initialize CanvasJSChart
 
 app.mount('#app');

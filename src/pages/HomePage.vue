@@ -6,7 +6,8 @@
   <InfoSection/>
   <TeamSection/>
   <VideoSection/>
-  <!-- <TestimionalsSection/> -->
+  <ArchitectureSection/>
+   <SliderSection/>
   
   <FooterSection/>
   
@@ -20,9 +21,11 @@ import ServicesSection from "@/modules/Home/ServicesSection.vue";
 import InfoSection from "@/modules/Home/InfoSection.vue";
 import TeamSection from "../modules/Home/TeamSection.vue"
 import VideoSection from "../modules/Home/VideoSection.vue"
+import ArchitectureSection from '@/modules/Home/ArchitectureSection.vue';
 // import AccordionSectionn from "../modules/Home/AccordionSection.vue"
-// import TestimionalsSection from '../modules/Home/TestimionalsSection.vue';
+import SliderSection from '../modules/Home/SliderSection.vue';
 import FooterSection from '@/components/FooterSection.vue';
+
 
 
 
@@ -35,9 +38,11 @@ export default {
       InfoSection,
       TeamSection,
       VideoSection,
+      ArchitectureSection,
+      
       // AccordionSectionn,
     
-    // TestimionalsSection,
+   SliderSection,
     FooterSection
 
     },

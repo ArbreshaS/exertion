@@ -1,5 +1,6 @@
 <template>
   <footer class="footer-sec">
+    <v-container fluid class="px-12" style="max-width: 1500px;">
     <div class="main">
       <div class="logo row">
         <div class="footer-header">
@@ -52,12 +53,15 @@
                 <font-awesome-icon class="social-icon" :icon="['fab', 'pinterest']" style="color: #fff; margin: 0 10px;" />
           </div>
         </div>
+        
       </div>
+      
     </div>
     <div class="copyright">
       <hr>
       <p>© Copyright 2024</p>
     </div>
+    </v-container>
   </footer>
 </template>
 
@@ -75,17 +79,17 @@ export default {
 
 footer {
   color: #fff;
-  background-image: url('@/assets/background.jpg');
+  background-image: url('@/assets/footerb.jpg');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
   position: relative;
   width: 100%;
   height: 100%;
-  top: 150px;
-  border-top-left-radius: 70px;
+   border-top-left-radius: 70px;
   font-size: 1rem;
 }
+
 
 @media (max-width: 960px) {
   footer {

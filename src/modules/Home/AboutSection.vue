@@ -164,8 +164,8 @@ export default {
 }
 .wrapper {
 
-  height: 300px;
-  width: 300px;
+  height: 330px;
+  width: 330px;
  
 }
 .container {
@@ -179,16 +179,16 @@ export default {
  
 }
 .image-cube {
-  width: 250px;
-  height: 250px;
+  width: 320px;
+  height: 320px;
   transform-style: preserve-3d;
   position: relative;
   transition: 2s;
   border-radius: 29px;
 }
 .image-cube div {
-  height: 250px;
-  width: 250px;
+  height: 300px;
+  width: 300px;
   position: absolute;
 }
 img {
@@ -227,11 +227,58 @@ img {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
- 
 
+@media (max-width: 768px) {
+  .wrapper {
+    height: 240px;
+    width: 240px;
+  }
+  .image-cube {
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+  }
+  .image-cube div {
+    height: 220px;
+    width: 220px;
+  }
+  
   .column-content h2 {
     font-size: 24px; 
+}
+}
+
+
+@media (max-width: 480px) {
+  .wrapper {
+    height: 190px;
+    width: 190px;
+  }
+  .image-cube {
+    width: 190px;
+    height: 190px;
+    border-radius: 15px;
+  }
+  .image-cube div {
+    height: 190px;
+    width: 190px;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .wrapper {
+    height: 150px;
+    width: 150px;
+  }
+  .image-cube {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+  }
+  .image-cube div {
+    height: 130px;
+    width: 130px;
   }
 }
 </style>
