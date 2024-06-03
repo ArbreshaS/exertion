@@ -25,6 +25,7 @@
     "vue-router": "^4.3.2",
     "vue-slick-carousel": "^1.0.6",
     "vue-template-compiler": "^2.7.16",
+    "vuejs3-highcharts": "^1.0.2",
     "vuetify": "^3.6.6",
     "vuex": "^4.0.0"
   },
