@@ -7,9 +7,6 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="12"></v-col>
-      </v-row>
-      <v-row>
         <v-col cols="12" lg="6" class="image-col">
           <div class="image-box smaller-image smallerr-div relative-position">
             <img :src="imageUrls[0]" :alt="'Image 1'">
@@ -54,7 +51,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="12" lg="6" class="image-col">
+        <v-col cols="12" lg="6" class="image-col offset-lg-6 move-up-lg">
           <div class="image-box smaller-image smalleer-div relative-position">
             <img :src="imageUrls[4]" :alt="'Image 5'">
             <div class="info-box">
@@ -75,10 +72,7 @@ import CostumButton from '@/components/CostumButton.vue';
 export default {
   components: {
     CostumButton,
-
-   
   },
-
   data() {
     return {
       imageUrls: [
@@ -95,7 +89,6 @@ export default {
       this.$router.push({ path: '/projectinfo' });
     }
   }
-
 };
 </script>
 
@@ -132,7 +125,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease-in-out; 
+  transition: transform 0.5s ease-in-out;
 }
 
 .info-box {
@@ -166,7 +159,7 @@ img {
 }
 
 .image-box:hover img {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 .smallerr-div {
@@ -179,13 +172,27 @@ img {
 }
 
 .smalleer-div {
-  margin-left: 595px !important;
-  margin-top: -130px;
+  margin-left: 0 !important;
+  margin-top: -2000px !important; 
 }
 
 @media screen and (max-width: 767px) {
-  .image-col {
-    width: 100%;
+  .smallerr-div,
+  .largerr-div,
+  .smalleer-div {
+    margin: 0 !important;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .smalleer-div {
+    margin-top: 0 !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  .move-up-lg {
+    margin-top: -130px; 
+  }
+}
+
 </style>

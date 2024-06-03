@@ -6,108 +6,106 @@
           <h2 class="title">Work Process</h2>
         </v-col>
       </v-row>
-  <div class="work-process">
-    <div class="steps">
-      <div class="step">
-        <div class="step-image">
-          <img src="@/assets/all.jpg" alt="Concept">
-          <span class="step-number">01</span>
-          <div class="inner-circle"></div>
-        </div>
-        <h3>Concept</h3>
-        <p>Nulla metus metus ullamcorper vel tincidunt sed euismod.</p>
-      </div>
-      <div class="dashed-line"></div>
-      <div class="step">
-        <div class="step-image">
-          <img src="@/assets/all1.jpg" alt="Design Process">
-          <span class="step-number">02</span>
-          <div class="inner-circle"></div>
-        </div>
-        <h3>Design Process</h3>
-        <p>Nulla metus metus ullamcorper vel tincidunt sed euismod.</p>
-      </div>
-      <div class="dashed-line"></div>
-      <div class="step">
-        <div class="step-image">
-          <img src="@/assets/all2.jpg" alt="Supervision">
-          <span class="step-number">03</span>
-          <div class="inner-circle"></div>
-        </div>
-        <h3>Supervision</h3>
-        <p>Nulla metus metus ullamcorper vel tincidunt sed euismod.</p>
-      </div>
-      <div class="dashed-line"></div>
-      <div class="step">
-        <div class="step-image">
-          <img src="@/assets/all3.jpg" alt="Budget Planning">
-          <span class="step-number">04</span>
-          <div class="inner-circle"></div>
-        </div>
-        <h3>Budget Planning</h3>
-        <p>Nulla metus metus ullamcorper vel tincidunt sed euismod.</p>
-      </div>
-    </div>
-  </div>
-  </v-container>
+      <v-row class="work-process">
+        <v-col cols="12" sm="6" md="3" v-for="(step, index) in steps" :key="index">
+          <div class="step">
+            <div class="step-image">
+              <img :src="step.img" :alt="step.title">
+              <span class="step-number">{{ index + 1 }}</span>
+              <div class="inner-circle"></div>
+            </div>
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+          </div>
+          <div class="dashed-line" v-if="index < steps.length "></div>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
-
 <script>
 export default {
-  name: 'WorkProcess'
+  name: 'WorkProcess',
+  data() {
+    return {
+      steps: [
+        {
+          img: require('@/assets/all.jpg'),
+          title: 'Concept',
+          description: 'Nulla metus metus ullamcorper vel tincidunt sed euismod.'
+        },
+        {
+          img: require('@/assets/all1.jpg'),
+          title: 'Design Process',
+          description: 'Nulla metus metus ullamcorper vel tincidunt sed euismod.'
+        },
+        {
+          img: require('@/assets/all2.jpg'),
+          title: 'Supervision',
+          description: 'Nulla metus metus ullamcorper vel tincidunt sed euismod.'
+        },
+        {
+          img: require('@/assets/all3.jpg'),
+          title: 'Budget Planning',
+          description: 'Nulla metus metus ullamcorper vel tincidunt sed euismod.'
+        }
+      ]
+    };
+  }
 }
 </script>
-
 <style scoped>
+.image-container {
+  padding: 2rem 0;
+}
+
 .work-process {
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .title {
   color: #C8B560;
   font-size: 36px;
   margin-top: 50px;
-}
-
-.steps {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  text-align: center;
 }
 
 .step {
-  flex: 1;
   padding: 1rem;
-  max-width: 250px;
   position: relative;
 }
 
 .step-image {
   position: relative;
-  width: 200px; 
-  height: 200px; 
-  margin: 0 auto; 
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
 }
 
 .step-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 50%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.step-image img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .inner-circle {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 180px; 
-  height: 180px; 
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  background-color: rgba(50, 50, 50, 0.3); 
+  background-color: rgba(50, 50, 50, 0.3);
   transform: translate(-50%, -50%);
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .step-number {
@@ -129,7 +127,7 @@ export default {
 h3 {
   margin-top: 1rem;
   font-size: 1.5rem;
-  color: #C8B560; 
+  color: #C8B560;
 }
 
 p {
@@ -140,7 +138,7 @@ p {
 .dashed-line {
   width: 2rem;
   height: 1px;
-  margin-bottom: 95px;
+  margin: 1rem auto;
   background: repeating-linear-gradient(
     to right,
     #C8B560,
