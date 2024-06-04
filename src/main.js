@@ -24,9 +24,10 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 import { faBarsProgress } from '@fortawesome/free-solid-svg-icons';
 import { faMoneyCheckDollar } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faFacebook, faTwitter, faPinterest, faPlay, faPenNib, faBarsProgress, faMoneyCheckDollar);
+library.add(faFacebook, faTwitter, faPinterest, faPlay, faPenNib, faBarsProgress, faMoneyCheckDollar,faTimes);
 
 const vuetify = createVuetify({
   components,

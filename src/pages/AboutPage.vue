@@ -5,6 +5,9 @@
       <AboutSection/>
       <AboutService/>
       <AboutCharts/>
+      <div class="lamp" :style="{ display: lampDisplay }">
+      <div class="lampposition"><img src="../assets//lampb.jpg"></div>
+    </div>
       <AboutUs/>
       <FooterSection/>
 </div>
@@ -31,12 +34,37 @@ export default {
     AboutCharts,
     AboutUs,
     FooterSection
+  },
+  data() {
+    return {
+      lampDisplay: 'block'
+    };
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      this.lampDisplay = window.innerWidth >= 950 ? 'block' : 'none';
+    }
   }
 }
 </script>
 
-<style >
+<style scoped >
 .abouttemplate {
   background-color: #131313;
+}
+.lamp {
+  position: relative;
+}
+.lampposition {
+  position: absolute;
+  top: 95px;
+  left: 10px;
 }
 </style>

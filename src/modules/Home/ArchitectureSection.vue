@@ -116,6 +116,7 @@ export default {
 	);
 	border-radius: 20px;
 	animation: animate 4s linear infinite;
+  z-index: 0;
 }
 .box::before,
 .box::after {
@@ -139,7 +140,7 @@ export default {
 	animation-delay: -1s;
 }
 .box::after {
-	inset: 8px;
+	inset: 12px;
 	background-image: url(../../assets/architecture3.jpg);
   background-size: cover; 
   background-position: center; 
@@ -169,7 +170,23 @@ export default {
     bottom: 0;
   }
   100% {
-    bottom: 90px; /* Adjust the maximum height */
+    bottom: 90px; 
   }
+}
+
+@media (max-width: 1070px) {
+    .box {
+        width: 450px; 
+    }
+}
+@media (max-width: 970px) {
+    .box {
+        width: 430px; 
+    }
+}
+@media (max-width: 500px) {
+    .box {
+        width: 330px;
+    }
 }
 </style>

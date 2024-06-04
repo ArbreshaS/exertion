@@ -13,7 +13,7 @@
             </v-btn>
           </v-toolbar-items>
           <img
-             :src="drawer ? require('@/assets/closeicon.png') : require('@/assets/menu.jpg')"
+             :src="drawer ? require('@/assets/xx.png') : require('@/assets/menu.jpg')"
              @click="toggleDrawer"
              class="hidden-md-and-up"
              style="cursor: pointer;"

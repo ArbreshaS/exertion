@@ -86,7 +86,7 @@ footer {
   position: relative;
   width: 100%;
   height: 100%;
-   border-top-left-radius: 70px;
+  border-top-left-radius: 70px;
   font-size: 1rem;
 }
 
@@ -198,7 +198,7 @@ footer {
 
 input[type=email] {
 
-  padding-bottom: 5px;
+  padding: 15px;
   border: 1px solid #C8B560;
   border-radius: 10px;
   background-color: transparent;

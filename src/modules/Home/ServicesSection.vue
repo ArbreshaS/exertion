@@ -26,9 +26,7 @@
           </v-col>
          
         </v-row>
-        <div class="lamp">
-            <img src="../../assets//lampb.jpg">
-          </div>
+       
       </v-container>
     </div>
   </template>
@@ -118,15 +116,6 @@
   color: #fff; 
  
 }
-.lamprelative{
-  position:relative ;
-  width: 100%; 
-  height: auto; 
-}
-.lamp{
-  position:absolute;
-  top:1890px;
-  right:20px;
-}
+
   </style>
   

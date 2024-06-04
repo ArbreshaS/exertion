@@ -4,11 +4,14 @@
       <div :style="cursorCircle" class="g-cursor__circle"></div>
       <div class="g-cursor__point" ref="point" :style="cursorPoint"></div>
     </div>
+    
     <router-view />
   </div>
 </template>
 
 <script>
+
+
 export default {
   name: "App",
   data() {
