@@ -1,4 +1,4 @@
-# exertion
+# Exertion
 
 ## Project setup
 ```
