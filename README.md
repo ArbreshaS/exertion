@@ -8,6 +8,18 @@
 **Exertion** is a web application built with **Vue.js** that showcases architecture and interior design projects.  
 It is an **informational website** aimed at companies and clients interested in apartment construction, design ideas, and interior solutions.  
 
+
+**✨ Features **
+
+Informative website about architecture and apartment construction
+
+Portfolio showcasing architecture projects
+
+Interior design gallery and inspiration
+
+Contact and service information for clients
+
+
 **Users can:**
 - Browse completed apartment projects  
 - Explore interior design ideas and concepts  
@@ -40,13 +52,3 @@ cd exertion
 npm install
 npm run serve
 
-
-**✨ Features
-
-Informative website about architecture and apartment construction
-
-Portfolio showcasing architecture projects
-
-Interior design gallery and inspiration
-
-Contact and service information for clients
