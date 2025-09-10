@@ -46,7 +46,7 @@ Contact and service information for clients
 
 ### 1. Clone the repository
 ```bash
-git clone <repo>
+git clone https://github.com/ArbreshaS/exertion.git
 cd exertion
 
 npm install
