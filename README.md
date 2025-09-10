@@ -9,7 +9,7 @@
 It is an **informational website** aimed at companies and clients interested in apartment construction, design ideas, and interior solutions.  
 
 
-**✨ Features **
+✨ Features 
 
 Informative website about architecture and apartment construction
 
